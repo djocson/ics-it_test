@@ -1,2 +1,3 @@
-create view dbo.vw_SKUPrice as ID, Code, Name, dbo.udf_GetSKUPrice(ID)
-    from dbo.SKU
+create view dbo.vw_SKUPrice as 
+    select ID, Code, Name, dbo.udf_GetSKUPrice(ID) as Price
+        from dbo.SKU;
