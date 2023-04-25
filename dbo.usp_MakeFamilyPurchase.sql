@@ -7,9 +7,9 @@ begin try
     	set BudgetValue = BudgetValue - (select sum(Value)
         	from dbo.Basket as b 
 		join dbo.Family as f on b.ID_Family = f.ID
-        	where f.SurName = @FamilySurName
+        	-- where f.SurName = @FamilySurName
         	group by ID_Family
-        	-- having f.SurName = @FamilySurName
+        	having f.SurName = @FamilySurName
     	)
     	where SurName = @FamilySurName
 end try
